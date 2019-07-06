@@ -10,13 +10,13 @@ from random import randint
 
 print('\nWelcome in Snake Gun Water game\n')
 print('Rules:-'.center(12, ' '))
-print('\n1. User select one number between 1-3\n')
-print('2. 1 for Snake\t2 for Gun\t3 for Water\n')
-print('3. if user select 1 and computer select 2, then Gun kill snake and computer winner\n')
-print('4. if user select 2 and computer select 3 then Gun drown in water and computer winner\n')
-print('5. if user select 3 and computer select 1 then Snake drink water and computer winner\n\n')
+print('\n1. User select one number between 1-3')
+print('2. 1 for Snake\t2 for Gun\t3 for Water')
+print('3. if user select 1 and computer select 2, then Gun kill snake and computer winner')
+print('4. if user select 2 and computer select 3 then Gun drown in water and computer winner')
+print('5. if user select 3 and computer select 1 then Snake drink water and computer winner\n')
 print('Terms:-'.center(12, ' '))
-print('1. There are 10 Rounds in this Game\n')
+print('1. There are 10 Rounds in this Game')
 print('2. According to maximum number of winner win this Game')
 
 def fun():
@@ -80,9 +80,20 @@ def fun():
                     you_win += 1
                     i += 1
                     break
+        elif num > 3:
+            print(f"\nNumber {num} is not valid please select numbers between 1-3")
+            continue
     if you_win > comp_win:
         print('Winner winner Chicken Dinner')
-        print(f'\nCongratulations You Won the Match by {you_win} : {comp_win}')
+        print(f'\nCongratulations You Won the Match by score {you_win} : {comp_win}\n')
+        repet_num = int(input('Enter 5 if You want to Play the match Again : '))
+        if repet_num == 5:
+            fun()
+        else:
+            print('\nThank You See you again')
+    elif you_win == comp_win:
+        print('Ohh!!! The match is tied')
+        print(f'\nComputer and Youre score are same {you_win} : {comp_win}\n')
         repet_num = int(input('Enter 5 if You want to Play the match Again : '))
         if repet_num == 5:
             fun()
@@ -90,7 +101,7 @@ def fun():
             print('\nThank You See you again')
     else:
         print('Aww!!! You Lose the Match')
-        print(f'\nComputer Won the Match by {you_win} : {comp_win}')
+        print(f'\nComputer Won the Match by score {you_win} : {comp_win}\n')
         repet_num = int(input('Enter 5 if You want to Play the match Again : '))
         if repet_num == 5:
             fun()
